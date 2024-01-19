@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年度总结</title>
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <script src="js/swiper.min.js"></script>
+  <script src="js/swiper.animate.min.js"></script>
+
+  <!--<link rel="stylesheet" href="/dist/css/swiper.min.css">
+<link rel="stylesheet" href="/dist/css/animate.min.css">
+<script src="/dist/js/swiper.min.js"></script>
+<script src="/dist/js/swiper.animate.min.js"></script>-->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-size: 16px;
+      /* 默认字体大小 */
+    }
+
+    h1 {
+      font-size: 2rem;
+      /* 相对于 body 字体大小的倍数 */
+    }
+
+    p {
+      font-size: 1rem;
+      /* 相对于 body 字体大小的倍数 */
+    }
+
+    body {
+      font-family: "microsoft yahei";
+    }
+
+    .swiper-container {
+      /*  width: 320px;
+    height: 480px;*/
+      width: 100%;
+      height: 100%;
+      background: #000;
+
+
+    }
+
+    .swiper-slide {
+      width: 100vw;
+      height: 100vh;
+      background-size: 100% 100%;
+    }
+
+    .swiper-slide1 {
+      background: url(upload/slide1/bg.png) no-repeat left top;
+      background-size: cover;
+    }
+    .swiper-slide2 {
+      background: url(upload/slide2/bg.png) no-repeat left top;
+      background-size: cover;
+    }
+    .swiper-slide3 {
+      background: url(upload/slide3/bg.jpg) no-repeat left top;
+      background-size: cover;
+    }
+
+    img {
+      display: block;
+    }
+
+    .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      opacity: .4;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+
+    @-webkit-keyframes start {
+
+      0%,
+      30% {
+        opacity: 0;
+        -webkit-transform: translate(0, 10px);
+      }
+
+      60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px);
+      }
+    }
+
+    @-moz-keyframes start {
+
+      0%,
+      30% {
+        opacity: 0;
+        -moz-transform: translate(0, 10px);
+      }
+
+      60% {
+        opacity: 1;
+        -moz-transform: translate(0, 0);
+      }
+
+      100% {
+        opacity: 0;
+        -moz-transform: translate(0, -8px);
+      }
+    }
+
+    @keyframes start {
+
+      0%,
+      30% {
+        opacity: 0;
+        transform: translate(0, 10px);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(0, -8px);
+      }
+    }
+
+    .co {
+      color: #F58220;
+    }
+
+    .ani {
+      /* position: absolute; */
+    }
+
+    .txt {
+      position: absolute;
+    }
+
+    #array {
+      position: absolute;
+      z-index: 999;
+      -webkit-animation: start 1.5s infinite ease-in-out;
+    }
+
+    .context-wrap-1 {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 12rem;
+      width: 70%;
+      color: #441E00;
+      height: calc(100vh - 12rem);
+    }
+
+    .context-wrap-1 .title {
+      font-size: 4rem;
+      font-weight: bolder;
+    }
+
+    .context-wrap-1 .line {
+      margin-top: 1.5rem;
+      width: 5rem;
+      height: 5px;
+      background: #F58220;
+    }
+
+    .context-wrap-1 .center {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      font-weight: 100;
+      line-height: 2.5rem;
+    }
+
+    .context-wrap-1 .center span {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .context-wrap-1 .bottom {
+      /* font-size: 0.7rem; */
+      position: absolute;
+      bottom: 10rem;
+      font-weight: 100;
+    }
+
+    .context-wrap-2 {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 8rem;
+      width: 70%;
+      color: #441E00;
+      height: calc(100vh - 8rem);
+    }
+
+    .context-wrap-2 .top {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 2rem;
+    }
+    .context-wrap-2 .top span {
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+
+    .context-wrap-2 .bottom {
+      position: absolute;
+      left: 0;
+      bottom: 5rem;
+      font-size: 0.5rem;
+    }
+
+    .context-wrap-3 {
+      position: absolute;
+      bottom: 50px;
+      left: 20px;
+      font-size: 1.4rem;
+      color: #441E00;
+    }
+
+    .context-wrap-3 .data-text {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 400px) {
+      body {
+        font-size: 14px;
+        /* 调整字体大小 */
+      }
+
+      html {
+        font-size: 14px;
+        /* 重新设置 html 标签的字体大小 */
+      }
+
+      .context-wrap-1 .bottom {
+        /* font-size: 0.7rem; */
+        bottom: 8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-------------slide1----------------->
+      <section class="swiper-slide swiper-slide1">
+        <div class="context-wrap-1">
+          <div class="title"><span class="co">2023</span>年度<br />业财账单</div>
+          <div class="line"></div>
+          <div class="center">
+            <div>第一次相遇是<span class="co">秋天</span></div>
+            <div>2022年月9日1日</div>
+            <div>业财上线已经<span class="co">666</span>天</div>
+          </div>
+          <div class="bottom">
+            <div>2023年即将过去</div>
+            <div>让我们分享回忆之旅</div>
+            <div>见证此刻，新年快乐!</div>
+          </div>
+        </div>
+      </section>
+      <!-------------slide2----------------->
+      <section class="swiper-slide swiper-slide2">
+        <div class="context-wrap-2">
+          <div class="top">
+            <div style="margin-bottom: 2rem;">亲爱的 <span class="co">XXX</span></div>
+            <div>一转眼，加入梯度已经 <span class="co">XXXX</span> 天</div>
+            <div style="margin-bottom: 2rem;">距离 <span class="co">X</span> 周年，还有 <span class="co">XXX</span> 天</div>
+            <div>还记得吗</div>
+            <div>你提交的第1个流程</div>
+            <div>是从 <span class="co">XXX</span> 到 <span class="co">XXX</span> 的 <span class="co">XXX</span></div>
+            <div>此次出差你一共待了 <span class="co">XXX</span> 天</div>
+          </div>
+          <div class="bottom">尽管山高路远，我们一路前行</div>
+        </div>
+      </section>
+      <!-------------slide3----------------->
+      <section class="swiper-slide swiper-slide3">
+        <div class="context-wrap-3">
+          <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s"
+            swiper-animate-delay="0s">这一年</div>
+          <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s"
+            swiper-animate-delay="0.5s" style="margin-top: 20px">你一共登录了<span class="data-text co">832</span>次</div>
+          <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s"
+            swiper-animate-delay="0.5s">日平均<span class="data-text co">2.86</span>次</div>
+          <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s"
+            swiper-animate-delay="0.5s">超过了<span class="data-text co">98.8%</span>用户</div>
+          <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="1.5s"
+            swiper-animate-delay="1s" style="margin-top: 20px">一天中最忙的时间段是
+            <div class="data-text co">上午 10:30 - 11:30</span>
+            </div>
+            <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
+              swiper-animate-delay="1.5s" style="margin-top: 20px">一年中</div>
+            <div class="ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
+              swiper-animate-delay="1.5s">业财陪伴我渡过了<span class="data-text co">10</span>个加班日</div>
+          </div>
+      </section>
+    </div>
+
+    <img src="images/arrow.png" style="width:20px;height:15px; top:460px; left:150px;" id="array" class="resize">
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <script>
+    scaleW = window.innerWidth / 320;
+    scaleH = window.innerHeight / 480;
+    var resizes = document.querySelectorAll('.resize');
+    for (var j = 0; j < resizes.length; j++) {
+      resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
+      resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
+      resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
+      resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
+    }
+
+    var mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      pagination: '.swiper-pagination',
+      //virtualTranslate : true,
+      mousewheelControl: true,
+      onInit: function (swiper) {
+        swiperAnimateCache(swiper);
+        swiperAnimate(swiper);
+      },
+      onSlideChangeEnd: function (swiper) {
+        swiperAnimate(swiper);
+      },
+      onTransitionEnd: function (swiper) {
+        swiperAnimate(swiper);
+      },
+
+
+      watchSlidesProgress: true,
+
+      onProgress: function (swiper) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          var slide = swiper.slides[i];
+          var progress = slide.progress;
+          var translate = progress * swiper.height / 4;
+          scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
+          var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
+          slide.style.opacity = opacity;
+          es = slide.style;
+          es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
+
+        }
+      },
+
+      onSetTransition: function (swiper, speed) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          es = swiper.slides[i].style;
+          es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+
+        }
+      },
+    })         
+  </script>
+</body>
+
+</html>
